@@ -50,7 +50,7 @@
     b.  In the "Network ID" field type:  10.10.90
     c.  Click on "Next" twice and then "Finish".
 3.  Back in the main "DNS Manager" window, click on the drop-down arrow next to "Forward Lookup Zones" to see the list of zones beneath it.
-4.  Under "Forward Lookup Zones" you'll see a zone called "corp.local".  Right-click on "corp.local" and select (New A or AAAA) record. 
+4.  Under "Forward Lookup Zones" you'll see a zone called "corp.local".  Right-click on "corp.local" and select (New A or AAAA) record.   
     a.  Create the following A records:
     >opsman     10.10.90.2  
     tkgi-api    10.10.90.5  
