@@ -5,13 +5,24 @@ Login to the environment with the following credentials:
   
   
 #### **Step 2**
+1. Login to vCenter. Select the "Use Windows Credentials" option.
+2  Power on the VM titled "tkgimc-01a"
 
+#### **Step 3 - SSH to VPOD Router and Add Routes**
+On the desktop there is an app called "MTPutty".  Open this app and double-click on "vPOD Router (192.168.100.1).  This should bring up an SSH to the vPod router.  The vPod router is like the data-center core router.  The NSX T0 router (which is already provisioned) peers with it.  We need to add some static routes on the vPod router.  At the command prompt type the following commands (when prompted for a password, use "VMware1!"):
 
+  >telnet localhost 2601  
+  en 
+  config t
+  ip route 10.10.80.0/24 192.168.210.3  
+  ip route 10.10.90.0/24 192.168.210.3  
+  exit  
+  copy run start  
+  
 
-
-
-#### **Step x**
-1.  SSH to VPOD router
+  
+  
+2.  
 1.  add default static route on T0 pointing to 192.168.210.1
 2.  add static routes on vpod router:
 root@vPodRouter-HOL:~# ip route add 10.100.100.0/24 via 192.168.210.1
