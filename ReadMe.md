@@ -11,7 +11,7 @@
 
 #### **Step 3 - SSH to VPOD Router and Add Routes**
 1. On the desktop there is an app called "MTPutty".  Open this app and double-click on "vPOD Router (192.168.100.1).  This should bring up an SSH session to the vPod router.  The vPod router is like the data-center core router.  The NSX T0 router (which is already provisioned) peers with it.  We need to add some static routes on the vPod router.  
-2. At the command prompt type the following commands (when prompted for a password, use "VMware1!"):
+2. In the vPod Router SSH session, type the following commands (when prompted for a password, use "VMware1!"):
 
 ```
   telnet localhost 2601  
@@ -28,10 +28,18 @@
 2.  Login to NSX Manager (it's bookmarked).
 3.  Click on the "Networking" tab at the top
 4.  In the "Networking" screen, click on the "IP Address Pools" link near the bottom left.
-5.  Select the "IP Blocks" menu add click "Add".  
-  a.  A screen should pop up that says "New IP Block".  
+5.  Select the "IP Pools" menu (NOT the "IP Blocks" menu) add click "Add".  
+  a.  A screen should pop up that says "Add New IP Pool".  
   b.  Enter the following details:
-      >Name:  Floating IP Pool  
-      CIDR:  10.10.90.0/24
-  
+        >Name:  Floating IP Pool  
+  c.  Click the "+" sign under Subnets to add a new subnet.  
+  d.  Enter the below details (you will need to click on the pencil icon in order to edit the details):
+        >IP Range:  10.10.90.2 - 10.10.90.254  
+        CIDR:  10.10.90.0/24
+        DNS Servers:  192.168.110.10  
+        DNS Suffix:  corp.local  
+        
 
+  
+#### **Step 5 - Add DNS Entries for TKGi Components**
+1.  
