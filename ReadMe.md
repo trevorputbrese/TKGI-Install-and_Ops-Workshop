@@ -1,5 +1,5 @@
 #### **Step 1**
-Login to the environment with the following credentials:
+1. Login to the environment with the following credentials:
   >username:  administrator@corp.local  
   password:  VMware1!
   
@@ -10,7 +10,8 @@ Login to the environment with the following credentials:
 3. Power on the VM titled "tkgimc-01a"
 
 #### **Step 3 - SSH to VPOD Router and Add Routes**
-On the desktop there is an app called "MTPutty".  Open this app and double-click on "vPOD Router (192.168.100.1).  This should bring up an SSH to the vPod router.  The vPod router is like the data-center core router.  The NSX T0 router (which is already provisioned) peers with it.  We need to add some static routes on the vPod router.  At the command prompt type the following commands (when prompted for a password, use "VMware1!"):
+1. On the desktop there is an app called "MTPutty".  Open this app and double-click on "vPOD Router (192.168.100.1).  This should bring up an SSH session to the vPod router.  The vPod router is like the data-center core router.  The NSX T0 router (which is already provisioned) peers with it.  We need to add some static routes on the vPod router.  
+2. At the command prompt type the following commands (when prompted for a password, use "VMware1!"):
 
 ```
   telnet localhost 2601  
