@@ -33,7 +33,7 @@
   b.  Enter the following details:
         >Name:  Floating IP Pool  
   c.  Click the "+" sign under Subnets to add a new subnet.  
-  d.  Enter the below details (you will need to click on the pencil icon in order to edit the details):
+  d.  Enter the below details (you will need to click on the pencil icon in order to edit the details):  
         >IP Range:  10.10.90.2 - 10.10.90.254  
         CIDR:  10.10.90.0/24
         DNS Servers:  192.168.110.10  
@@ -42,4 +42,17 @@
 
   
 #### **Step 5 - Add DNS Entries for TKGi Components**
-1.  
+1.  One the Windows Taskbar (the menu at the bottom of the screen) click on the search icon and type "DNS".  An option for the "DNS Desktop App" should pop up.  Click on that to open the DNS Server.
+2.  Click on the drop-down arrow next to "ControlCenter.corp.local" to see the list of zones beneath it.
+3.  Click on the drop-down arrow next to "Reverse Lookup Zones".
+4.  Right click on "Reverse Lookup Zones" and select "Add Zone":
+    a.  In the "New Zone Wizard" that pops up, click on "Next" four times until it prompts you for the "Network ID"
+    b.  In the "Network ID" field type:  10.10.90
+    c.  Click on "Next" twice and then "Finish".
+3.  Back in the main "DNS Manager" window, click on the drop-down arrow next to "Forward Lookup Zones" to see the list of zones beneath it.
+4.  Under "Forward Lookup Zones" you'll see a zone called "corp.local".  Right-click on "corp.local" and select (New A or AAAA) record. 
+    a.  Create the following A records:
+    >opsman     10.10.90.2  
+    tkgi-api    10.10.90.5  
+    harbor      10.10.90.6
+ 
